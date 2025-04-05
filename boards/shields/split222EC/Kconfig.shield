@@ -1,6 +1,6 @@
 #No whitespace after the comma or in your part name!
-config SHIELD_SPLIT222_LEFT
-	def_bool $(shields_list_contains,split222_left)
+config SHIELD_SPLIT222EC_LEFT
+	def_bool $(shields_list_contains,split222EC_left)
 
-config SHIELD_SPLIT222_RIGHT
-	def_bool $(shields_list_contains,split222_right)
+config SHIELD_SPLIT222EC_RIGHT
+	def_bool $(shields_list_contains,split222EC_right)
