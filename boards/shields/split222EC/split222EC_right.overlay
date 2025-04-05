@@ -1,4 +1,4 @@
-#include "split222.dtsi"
+#include "split222EC.dtsi"
 //#include <dt-bindings/zmk/input_transform.h>
 
 
