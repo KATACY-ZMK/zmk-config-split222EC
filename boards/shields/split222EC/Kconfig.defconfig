@@ -1,15 +1,15 @@
-if SHIELD_SPLIT222_LEFT #ここを変えてセントラル側に問題のコードを移行
+if SHIELD_SPLIT222EC_LEFT #ここを変えてセントラル側に問題のコードを移行
 
 # Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "split222"
+    default "split222EC"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_SPLIT222_LEFT || SHIELD_SPLIT222_RIGHT
+if SHIELD_SPLIT222EC_LEFT || SHIELD_SPLIT222EC_RIGHT
 
 config ZMK_SPLIT
     default y
