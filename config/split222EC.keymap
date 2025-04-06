@@ -1,14 +1,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 
-#defin ONE 1
-#defin TWO 2
-#defin THREE 3
-#defin FOUR 4
-#defin FIVE 5
-#defin SIX 6
-#defin SEVEN 7
-#defin EIGHT 8
+#define ONE 1
+#define TWO 2
+#define THREE 3
+#define FOUR 4
+#define FIVE 5
+#define SIX 6
+#define SEVEN 7
+#define EIGHT 8
 / {
     behaviors {
         rot_kp: sensor_rotate_kp {
