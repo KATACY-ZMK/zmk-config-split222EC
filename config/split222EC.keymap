@@ -101,7 +101,7 @@
                 &mo 1 &mo 2 &mo 3 &mo 4
                 &mo 5 &mo 6 &mo 7 &mo 8
             >;
-            sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
+            sensor-bindings = <&mouse_SCRL SCRL_UP SCRL_DOWN>;
         };
 
         ONE {
@@ -109,7 +109,7 @@
                 &kp N1 &kp LCTRL &kp N1 &kp LCTRL
                 &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
             >;
-            sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
+            sensor-bindings = <&mouse_SCRL SCRL_UP SCRL_DOWN>;
         };
 
         TWO {
@@ -117,7 +117,7 @@
                 &kp N2 &kp LCTRL &kp N2 &kp LCTRL
                 &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
             >;
-            sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
+            sensor-bindings = <&mouse_SCRL SCRL_UP SCRL_DOWN>;
         };
 
         THREE {
@@ -125,7 +125,7 @@
                 &kp N3 &kp LCTRL &kp N3 &kp LCTRL
                 &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
             >;
-            sensor-bindings = <&mouse_mv MOVE_LEFT MOVE_RIGHT>;
+            sensor-bindings = <&mouse_SCRL SCRL_LEFT SCRL_RIGHT>;
         };
 
         FOUR {
