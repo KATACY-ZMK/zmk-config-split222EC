@@ -85,7 +85,7 @@
             >;
             sensor-bindings = <&rot_kp LA(PG_DN) LA(PG_UP)>;
         };
-        SEVEN {
+        EIGHT {
             bindings = <
                 &kp N7      &kp LCTRL  &kp N7     &kp LCTRL
                 &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
