@@ -53,80 +53,77 @@ precision {
             bindings = <&mmv>, <&mmv>;
         };
     };
+keymap {
+    compatible = "zmk,keymap";
 
-    keymap {
-        compatible = "zmk,keymap";
+    default_layer {
+        bindings = <
+            &mo 1 &mo 2 &mo 3 &mo 4
+            &mo 5 &mo 6 &mo 7 &mo 8
+        >;
+    };
 
-        default_layer {
-            bindings = <
-                &mo 1 &mo 2 &mo 3 &mo 4
-                &mo 5 &mo 6 &mo 7 &mo 8
-            >;
+    ONE {
+        bindings = <
+            &kp N1 &kp LCTRL &kp N1 &kp LCTRL
+            &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
+        >;
         sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
-        };
+    };
 
-        ONE {
-            bindings = <
-                &kp N1      &kp LCTRL  &kp N1     &kp LCTRL
-                &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
-            >;
+    TWO {
+        bindings = <
+            &kp N2 &kp LCTRL &kp N2 &kp LCTRL
+            &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
+        >;
         sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
-        };
+    };
 
-        TWO {
-            bindings = <
-                &kp N2      &kp LCTRL  &kp N2     &kp LCTRL
-                &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
-            >;
-        sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
-        };
-
-
-        THREE {
-            bindings = <
-                &kp N3      &kp LCTRL  &kp N3     &kp LCTRL
-                &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
-            >;
+    THREE {
+        bindings = <
+            &kp N3 &kp LCTRL &kp N3 &kp LCTRL
+            &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
+        >;
         sensor-bindings = <&rot_kp MOVE_LEFT MOVE_RIGHT>;
-        };
+    };
 
-        FOUR {
-            bindings = <
-                &kp N4      &kp LCTRL  &kp N4     &kp LCTRL
-                &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
-            >;
+    FOUR {
+        bindings = <
+            &kp N4 &kp LCTRL &kp N4 &kp LCTRL
+            &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
+        >;
         sensor-bindings = <&rot_kp C_BRI_DEC C_BRI_INC>;
-        };
+    };
 
-        FIVE {
-            bindings = <
-                &kp N5      &kp LCTRL  &kp N5     &kp LCTRL
-                &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
-            >;
+    FIVE {
+        bindings = <
+            &kp N5 &kp LCTRL &kp N5 &kp LCTRL
+            &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
+        >;
         sensor-bindings = <&rot_kp C_PREV C_NEXT>;
-        };
+    };
 
-        SIX {
-            bindings = <
-                &kp N6      &kp LCTRL  &kp N6     &kp LCTRL
-                &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
-            >;
+    SIX {
+        bindings = <
+            &kp N6 &kp LCTRL &kp N6 &kp LCTRL
+            &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
+        >;
         sensor-bindings = <&rot_kp LC(Z) LC(LS(Z))>;
-        };
+    };
 
-        SEVEN {
-            bindings = <
-                &kp N7      &kp LCTRL  &kp N7     &kp LCTRL
-                &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
-            >;
+    SEVEN {
+        bindings = <
+            &kp N7 &kp LCTRL &kp N7 &kp LCTRL
+            &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
+        >;
         sensor-bindings = <&rot_kp LA(PG_DN) LA(PG_UP)>;
-        };
-        EIGHT {
-            bindings = <
-                &kp N7      &kp LCTRL  &kp N7     &kp LCTRL
-                &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
-           >;
+    };
+
+    EIGHT {
+        bindings = <
+            &kp N7 &kp LCTRL &kp N7 &kp LCTRL
+            &kp LSHIFT &kp LALT &kp LSHIFT &kp LALT
+        >;
         sensor-bindings = <&rot_kp LA(LEFT) LA(RIGHT)>;
-        };
     };
 };
