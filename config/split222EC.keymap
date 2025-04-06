@@ -5,6 +5,8 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 #include <dt-bindings/zmk/pointing.h>
 
+#include <input/processors.dtsi>
+
 #define ONE 1
 #define TWO 2
 #define THREE 3
@@ -13,6 +15,24 @@
 #define SIX 6
 #define SEVEN 7
 #define EIGHT 8
+
+&mmv {
+    delay-ms -<0>;
+    trigger-period-ms = <10>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <1>;
+};
+
+&mmv_input_listener {
+warp {
+    layers = <ONE>;
+input-processors =<&zip_xy_scaler 2 1>;
+};
+precision {
+    ;ayers = <TWO>;
+input-processors = <&zip_xy_scaler 1 4>;
+};
+
 / {
     behaviors {
         rot_kp: sensor_rotate_kp {
@@ -27,6 +47,11 @@
             bindings = <&mkp>, <&mkp>;
         };
 
+        mouse_mv: mouse_cursor_move {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&mmv>, <&mmv>;
+        };
     };
 
     keymap {
@@ -37,7 +62,7 @@
                 &mo 1 &mo 2 &mo 3 &mo 4
                 &mo 5 &mo 6 &mo 7 &mo 8
             >;
-        sensor-bindings = <&mouse_click MB2 MB1>;
+        sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
         };
 
         ONE {
@@ -45,7 +70,7 @@
                 &kp N1      &kp LCTRL  &kp N1     &kp LCTRL
                 &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
             >;
-        sensor-bindings = <&mouse_click MB3 MB3>;
+        sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
         };
 
         TWO {
@@ -53,7 +78,7 @@
                 &kp N2      &kp LCTRL  &kp N2     &kp LCTRL
                 &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
             >;
-        sensor-bindings = <&mouse_click MB4 MB5>;
+        sensor-bindings = <&mouse_mv MOVE_UP MOVE_DOWN>;
         };
 
 
@@ -62,7 +87,7 @@
                 &kp N3      &kp LCTRL  &kp N3     &kp LCTRL
                 &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
             >;
-        sensor-bindings = <&rot_kp C_VOL_DN C_VOL_UP>;
+        sensor-bindings = <&rot_kp MOVE_LEFT MOVE_RIGHT>;
         };
 
         FOUR {
