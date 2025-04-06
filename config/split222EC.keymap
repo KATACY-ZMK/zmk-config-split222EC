@@ -56,7 +56,7 @@
 
 &msc_input_listener {
    warp {
-       layers - <ONE>;
+       layers = <ONE>;
        input-processors = <&zip_wheel_scaler 4 1>;
    };
    precision {
