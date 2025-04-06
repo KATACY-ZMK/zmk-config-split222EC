@@ -34,7 +34,7 @@
                 &kp N1      &kp LCTRL  &kp N1     &kp LCTRL
                 &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
             >;
-            sensor-bindings = <&rot_kp DN UP>;
+            sensor-bindings = <&rot_kp DOWN UP>;
         };
 
         TWO {
