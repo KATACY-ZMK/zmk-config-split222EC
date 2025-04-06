@@ -37,7 +37,7 @@
             sensor-bindings = <&rot_kp DN UP>;
         };
 
-        TOW {
+        TWO {
             bindings = <
                 &kp N2      &kp LCTRL  &kp N2     &kp LCTRL
                 &kp LSHIFT  &kp LALT   &kp LSHIFT &kp LALT 
