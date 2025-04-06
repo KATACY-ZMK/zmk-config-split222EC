@@ -6,6 +6,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 #define ONE 1
 #define TWO 2
@@ -23,6 +24,13 @@
     acceleration-exponent = <1>;
 };
 
+&msc {
+    delay-ms = <0>;
+    trigger-period-ms = <10>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <0>;
+};
+
 &mmv_input_listener {
     warp {
         layers = <ONE>;
@@ -32,6 +40,29 @@
         layers = <TWO>;
         input-processors = <&zip_xy_scaler 1 4>;
     };
+};
+
+/ {
+   input_processors {
+       zip_wheel_scaler: zip_wheel scaler {
+           compatible = "zmk,input-processor-scaler";
+           #input-processor-cells = <2>;
+           type = <INPUT_EV_REL>;
+           codes = <INPUT_REL_WHEEL>;
+           track-remainders;
+       };
+   };
+};
+
+&msc_input_listener {
+   warp {
+       layers - <ONE>;
+       input-processors = <&zip_wheel_scaler 4 1>;
+   };
+   precision {
+       layers = <TWO>;
+       input-processors = <&zip_wheel_scaler 1 2>;
+   };
 };
 
 /{
@@ -52,6 +83,12 @@
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&mmv>, <&mmv>;
+            tap-ms = <10>;
+        };
+        mouse_scrl: mouse_wheel_scrl {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
             tap-ms = <10>;
         };
     };
